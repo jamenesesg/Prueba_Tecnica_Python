@@ -172,10 +172,11 @@ class Tablero():
                 self.tab[ficha.x-1:ficha.x,ficha.y-1:ficha.y+2] = 1
                 
             elif(type(ficha).__name__ == 'Caballo'):
-                # self.tab[0 if(ficha.x-1 < 0) else (ficha.x-1) : ficha.x+2 : 2 , 0 if(ficha.y-2 < 0) else (ficha.y-2) : ficha.y+3 : 4] = 1
-                # self.tab[0 if(ficha.x-2 < 0) else (ficha.x-2) : ficha.x+3 : 4 , 0 if(ficha.y-1 < 0) else (ficha.y-1) : ficha.y+2 : 2] = 1
-                self.tab[ficha.x+1 if(ficha.x < 2) else (ficha.x-1) : ficha.x+2 : 2 , ficha.y+2 if(ficha.y < 2) else (ficha.y-2) : ficha.y+3 : 4] = 1
-                self.tab[0 if(ficha.x < 2) else (ficha.x-2) : ficha.x+3 : 4 , 0 if(ficha.y < 1) else (ficha.y-1) : ficha.y+2 : 2] = 1
+                if(ficha.x == 0):
+                    self.tab[ficha.x+1 if(ficha.x < 2) else (ficha.x-1) : ficha.x+2 : 2 , ficha.y+2 if(ficha.y < 2) else (ficha.y-2) : ficha.y+3 : 4] = 1
+                else:    
+                    self.tab[ficha.x-1 if(ficha.x < 2) else (ficha.x-1) : ficha.x+2 : 2 , ficha.y+2 if(ficha.y < 2) else (ficha.y-2) : ficha.y+3 : 4] = 1
+                self.tab[ficha.x+2 if(ficha.x < 2) else (ficha.x-2) : ficha.x+3 : 4 , ficha.y+1 if(ficha.y < 1) else (ficha.y-1) : ficha.y+2 : 2] = 1
         
             self.tab[ficha.x, ficha.y] = 8
         except IndexError as indexerror:

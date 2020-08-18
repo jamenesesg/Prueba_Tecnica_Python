@@ -3,8 +3,8 @@
 
 Subdirectorios:
 
-- Paquete "package": contiene un archivo ejecutable "ejecutable.py" y el subpaquete "codigo"				   
-- SubPaquete "codigo": contiene los archivos "ajedrez.py" y "polinomio.py"
+- Paquete "package": contiene el subpaquete "codigo"				   
+- Subpaquete "codigo": contiene los archivos "ajedrez.py" y "polinomio.py"
 
 
 - Archivo "polinomio.py": (Clase implementada "Polinomio")
@@ -30,11 +30,11 @@ Subdirectorios:
 		__evaluar__(self, x)
 		    Permite evaluar un Polinomio:
 		    
-		    Se hace un llamado al método (Polinomio.__evaluar__(Polinomio, valor))
-		    y se envia como argumento el polinomio a evaluar y el valor:
+		    Se hace un llamado al método desde la clase (Polinomio.__evaluar__(Polinomio, valor))
+		    Se envia como argumento el polinomio a evaluar y el valor:
 		    
-			    Polinomio.__evaluar__(Polinomio(5,3,0,1,3),5)      
-			    Polinomio.__evaluar__(p,3)                         # (p) objeto polinomio
+			    Polinomio.__evaluar__(Polinomio(5,3,0,1,3), 5)      
+			    Polinomio.__evaluar__(p, 3)                         # (p) objeto polinomio
 		
 		__mul__(self, val)
 		    Permite Multiplicar dos Polinomios o Multiplicar un Polinomio por un escalar, de la forma:
@@ -55,25 +55,24 @@ Subdirectorios:
 
 Ejemplo ejecución:
 
-		c1 = Polinomio(1,2,3)    
-		c2 = Polinomio(3,2,1)
+		p1 = Polinomio(1,2,3)    
+		p2 = Polinomio(3,2,1)
 
-		print(c1)
-		print(c2)
+		print(p1) 				  #  3X^2 + 2X + 1
+		print(p2)                 #  1X^2 + 2X + 3
 
-		print(c1.__add__(c2))
-		print(c1.__sub__(c2)) 
-		print(c1.__mul__(c2))     # Multiplicación de 2 polinomios
-		print(c1.__mul__(3))     # Multiplicación de un polinomio por un escalar
+		print(p1.__add__(p2)) 	  # Suma de 2 polinomios 
+		print(p1.__sub__(p2))     # Resta de 2 polinomios 
+		print(p1.__mul__(p2))     # Multiplicación de 2 polinomios
+		print(p1.__mul__(3))      # Multiplicación de un polinomio por un escalar
 
-		print(Polinomio.__evaluar__(c1,5))
+		print(Polinomio.__evaluar__(p1, 5))
 
 
 
-- Archivo "ajedrez.py": 
-		(Clases implementadas:  Clase Tablero,
- 								Clase Ficha -> Subclases Torre, Alfil, Reina, Rey, Peon, Caballo)
+- Archivo "ajedrez.py":	(Clases implementadas:  Clase Tablero, Clase Ficha -> Subclases Torre, Alfil, Reina, Rey, Peon, Caballo)
 
+ 	
  	[class Tablero()]
 		""" Clase (Plantilla) que representa un tablero [8x8] de ajedrez. """
 
@@ -125,7 +124,7 @@ Ejemplo ejecución:
 		print(ficha_1)
 		print(tablero_ajedrez)
 		#-----------------
-		ficha_2 = Alfil("Alfil")
+		ficha_2 = Alfil("Alfil", 4, 2)
 		print("Ubicación ficha_2 : ", ficha_2.get_position())
 		tablero_ajedrez.ubicar_ficha(ficha_2)
 
