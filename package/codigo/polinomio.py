@@ -1,5 +1,5 @@
 import collections
-import itertools
+from itertools import zip_longest
 
 class Polinomio():
     """ Clase (Plantilla) que permite simular un objeto algebraico """
@@ -9,17 +9,21 @@ class Polinomio():
 
                 p = Polinomio(polinomio)      # objeto Polinomio
                 p = Polinomio([1,2,3 ...])    # secuencia
-                p = Polinomio(1, 2, 3 ...)    # escalar """
-        
-        if len(args)==1:            
-            if isinstance(args[0], Polinomio):                 # Se envia como argumento un polinomio
-                self.coeficientes = args[0].coeficientes                
-            elif isinstance(args[0], collections.Iterable):    # Se envia como argumento una coleccion de elementos
-                self.coeficientes = list(args[0])
-            else:                                              # Se envia como argumento un escalar
-                self.coeficientes = [args[0]+0]
-        else:                                                  # Se envian como argumento multiples escalares
-               self.coeficientes = [i+0 for i in args]
+                p = Polinomio(1, 2, 3 ...)    # escalar """        
+        try:
+            if len(args)==1:            
+                if isinstance(args[0], Polinomio):                 # Se envió como argumento un polinomio
+                    self.coeficientes = args[0].coeficientes                
+                elif isinstance(args[0], collections.Iterable):    # Se envió como argumento una coleccion de elementos
+                    self.coeficientes = list(args[0])
+                else:                                              # Se envió como argumento un escalar
+                    self.coeficientes = [args[0]+0]
+            elif len(args)==0:                                     # Se envió como argumento un campo vacio, se asume valor cero
+                self.coeficientes = [0]
+            else:                                                  # Se envian como argumento multiples escalares
+                   self.coeficientes = [i+0 for i in args]
+        except Exception as e:
+            print("Ocurrio el siguiente error:", type(e).__name__)
 
     def __evaluar__(self, x):
         """ Permite evaluar un Polinomio:
@@ -56,7 +60,8 @@ class Polinomio():
                 p1.__add__(p2) """
         
         if isinstance(val, Polinomio):
-            res = [ a+b for a,b in itertools.zip_longest(self.coeficientes, val.coeficientes, fillvalue=0)]
+            res = [ a+b for a,b in zip_longest(self.coeficientes, val.coeficientes, fillvalue=0)]   
+            #zip_longest funciona igual que zip, pero permite asignar un valor por defecto a un campo no definido y poder iterar dos polinomios de igual longitud.
         else:
             res = self.coeficientes[:]
             res[0] += val
@@ -68,7 +73,7 @@ class Polinomio():
                 p1.__sub__(p2) """
         
         if isinstance(val, Polinomio):
-            res = [ a-b for a,b in itertools.zip_longest(self.coeficientes, val.coeficientes, fillvalue=0)]
+            res = [ a-b for a,b in zip_longest(self.coeficientes, val.coeficientes, fillvalue=0)]
         else:
             res = self.coeficientes[:]
             res[0] -= val
