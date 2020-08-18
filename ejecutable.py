@@ -38,7 +38,7 @@ from package.codigo.polinomio import *
 
 
 
-# tablero_ajedrez = Tablero()
+tablero_ajedrez = Tablero()
 
 # ficha_1 = Torre("Torre")
 # print("Ubicación ficha_1 : ", ficha_1.get_position())
@@ -81,14 +81,14 @@ from package.codigo.polinomio import *
 # print(ficha_5)
 # print(tablero_ajedrez5)
 # #-----------------
-# ficha_6 = Caballo("Caballo")
-# print(ficha_6.get_position())
+ficha_6 = Caballo("Caballo")
+print(ficha_6.get_position())
 
-# tablero_ajedrez6 = Tablero()
-# tablero_ajedrez6.ubicar_ficha(ficha_6)
+tablero_ajedrez6 = Tablero()
+tablero_ajedrez6.ubicar_ficha(ficha_6)
 
-# print(ficha_6)
-# print(tablero_ajedrez6)
+print(ficha_6)
+print(tablero_ajedrez6)
 # #-----------------
 # ficha_6 = Caballo("Caballo",0,8)
 # print(ficha_6.get_position())

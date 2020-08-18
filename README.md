@@ -10,7 +10,7 @@ Subdirectorios:
 - Archivo "polinomio.py": (Clase implementada "Polinomio")
 
 	
-	<class Polinomio()>
+	[class Polinomio()]
 		""" Clase (Plantilla) que permite simular un objeto algebraico """
 
 		Metodos:
@@ -70,11 +70,11 @@ Ejemplo ejecución:
 
 
 
-- Archivo "ajedrez.py": (Clases implementadas:
-								Clase Tablero
+- Archivo "ajedrez.py": 
+		(Clases implementadas:  Clase Tablero,
  								Clase Ficha -> Subclases Torre, Alfil, Reina, Rey, Peon, Caballo)
 
- 	<class Tablero>
+ 	[class Tablero()]
 		""" Clase (Plantilla) que representa un tablero [8x8] de ajedrez. """
 
 		Metodos:
@@ -91,8 +91,9 @@ Ejemplo ejecución:
 
 		__str__(self)
 		    Retorna el tablero, para visualización
+
 	
-	<class Ficha>
+	[class Ficha()]
 		""" Clase (Plantilla) que representa cualquier ficha de ajedrez """
 
 		Metodos:
@@ -103,7 +104,7 @@ Ejemplo ejecución:
 		set_position(self, x, y)
 		    Método que pérmite setear la posición de un "objeto" Ficha en el tablero de ajedrez	
 	        
-	<class Torre, Alfil, Reina, Rey, Peon, Caballo>
+	[class Torre, Alfil, Reina, Rey, Peon, Caballo]
 		""" Subclases que heredan de la clase "Ficha" """
 
 		__init__(self, nombre, x=1, y=7)
