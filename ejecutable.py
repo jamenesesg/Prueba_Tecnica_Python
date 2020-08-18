@@ -1,60 +1,58 @@
 from package.codigo.ajedrez import * 
 from package.codigo.polinomio import *
 
-while(True):
-    try:
-        op = float(input("""
-            **********************************
-            Ejercicio a Evaluar : 
+# while(True):
+#     try:
+#         op = float(input("""
+#             **********************************
+#             Ejercicio a Evaluar : 
 
-                1. Tablero de Ajedrez
-                2. Clase Polinomio
+#                 1. Tablero de Ajedrez
+#                 2. Clase Polinomio
 
-            Escoja una opción: """))        
-        if (op != 1 and op != 2):
-            print("""
-            \nOpción incorrecta!!\n""")
-        elif (op == 2):
-            op2 = float(input("""
-                1. Crear Polinomio
-                2. Evaluar un Polinomio
-                3. Sumar dos Polinomios
-                4. Restar dos Polinomios
-                5. Multiplicar dos Polinomios o Multiplicar un Polinomio por un escalar
-                6. Imprimir Polinomio
-                7. Salir
+#             Escoja una opción: """))        
+#         if (op != 1 and op != 2):
+#             print("""
+#             \nOpción incorrecta!!\n""")
+#         elif (op == 2):
+#             op2 = float(input("""
+#                 1. Crear Polinomio
+#                 2. Evaluar un Polinomio
+#                 3. Sumar dos Polinomios
+#                 4. Restar dos Polinomios
+#                 5. Multiplicar dos Polinomios o Multiplicar un Polinomio por un escalar
+#                 6. Imprimir Polinomio
+#                 7. Salir
 
-                Eliga una opción : """))
+#                 Eliga una opción : """))
 
-            if(op2 == 1)
-
-
-            break
-    except Exception:         #Controla una excepcion no definida
-        print("""
-            \nOpción incorrecta!!\n""")
-
-input()
+#             if(op2 == 1)
 
 
+#             break
+#     except Exception:         #Controla una excepcion no definida
+#         print("""
+#             \nOpción incorrecta!!\n""")
+
+# input()
+
+
+
+# tablero_ajedrez = Tablero()
 
 # ficha_1 = Torre("Torre")
-# print(ficha_1.get_position())
-
-# tablero_ajedrez1 = Tablero()
-# tablero_ajedrez1.ubicar_ficha(ficha_1)
+# print("Ubicación ficha_1 : ", ficha_1.get_position())
+# tablero_ajedrez.ubicar_ficha(ficha_1)
 
 # print(ficha_1)
-# print(tablero_ajedrez1)
+# print(tablero_ajedrez)
 # #-----------------
 # ficha_2 = Alfil("Alfil")
-# print(ficha_2.get_position())
-
-# tablero_ajedrez2 = Tablero()
-# tablero_ajedrez2.ubicar_ficha(ficha_2)
+# print("Ubicación ficha_2 : ", ficha_2.get_position())
+# tablero_ajedrez.ubicar_ficha(ficha_2)
 
 # print(ficha_2)
-# print(tablero_ajedrez2)
+# print(tablero_ajedrez)
 # #-----------------
 # ficha_3 = Reina("Reina",2,4)
 # print(ficha_3.get_position())
@@ -104,35 +102,48 @@ input()
 
 
 
-            """)
+c1 = Polinomio(1,2,3)    
+c2 = Polinomio(3,2,1)
 
-            """
-            1. Puede crear un Polinomio de una de las tres formas, enviando como argumento:
+print(c1)
+print(c2)
 
-                p = Polinomio(polinomio)      # objeto Polinomio
-                p = Polinomio([1,2,3 ...])    # secuencia
-                p = Polinomio(1, 2, 3 ...)    # escalar
+print(c1.__add__(c2))
+print(c1.__sub__(c2)) 
+print(c1.__mul__(c2))     # Multiplicación de 2 polinomios
+print(c1.__mul__(3))     # Multiplicación de un polinomio por un escalar
 
-            1. Evaluar un Polinomio:
+print(Polinomio.__evaluar__(c1,5))
 
-                se hace el llamado al método (Polinomio.__evaluar__())
-                y se envia como argumento el polinomio a evaluar y la variable:
+           #  """)
 
-                    Polinomio.__evaluar__(Polinomio(5,3,0,1,3),5)      
-                    Polinomio.__evaluar__(p,3)                         # (p) objeto Polinomio
+           #  """
+           #  1. Puede crear un Polinomio de una de las tres formas, enviando como argumento:
 
-            2. Sumar dos Polinomios:
+           #      p = Polinomio(polinomio)      # objeto Polinomio
+           #      p = Polinomio([1,2,3 ...])    # secuencia
+           #      p = Polinomio(1, 2, 3 ...)    # escalar
 
-                    p1.__add__(p2)
+           #  1. Evaluar un Polinomio:
 
-            3. Restar dos Polinomios:
+           #      se hace el llamado al método (Polinomio.__evaluar__())
+           #      y se envia como argumento el polinomio a evaluar y la variable:
 
-                    p1.__sub__(p2)
+           #          Polinomio.__evaluar__(Polinomio(5,3,0,1,3),5)      
+           #          Polinomio.__evaluar__(p,3)                         # (p) objeto Polinomio
 
-            4. Multiplicar dos Polinomios o Multiplicar un Polinomio por un escalar:
+           #  2. Sumar dos Polinomios:
 
-                    p1.__mul__(p2)
-                    p1.__mul__(5)
+           #          p1.__add__(p2)
+
+           #  3. Restar dos Polinomios:
+
+           #          p1.__sub__(p2)
+
+           #  4. Multiplicar dos Polinomios o Multiplicar un Polinomio por un escalar:
+
+           #          p1.__mul__(p2)
+           #          p1.__mul__(5)
 
 
-           """)
+           # """)

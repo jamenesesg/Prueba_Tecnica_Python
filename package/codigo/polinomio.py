@@ -1,20 +1,3 @@
-# from numpy.polynomial import polynomial as p
-
-# c1 = (1,2,3)
-# c2 = 3
-
-# p.polyadd(c1,c2)        #	Suma entre polinomios
-# p.polysub(c1,c2)        #	Resta entre polinomios
-# p.polymul(c1,c2)        #	Resta entre polinomios
-
-# c1*2
-# c2*3
-
-# p.polyval(2, c1) # 4 + 4(2) + 4(2**2)
-# p.polyval(2, c2) # 4 + 4(2) + 4(2**2)
-
-
-
 import collections
 import itertools
 
@@ -129,15 +112,21 @@ class Polinomio():
             return "0"        
             
 
-    
-    
-# print(Polinomio(5,3,0,1,3))
-    
-# c1 = Polinomio(1,2,3)    
-# c2 = Polinomio(3,2,1) 
+# from numpy.polynomial import polynomial as p
 
-# print(c2.__mul__(5))
+# c1 = (1,2,3)
+# c2 = 3
 
-# print("c1 = ",c1)
+# p.polyadd(c1,c2)        # Suma entre polinomios
+# p.polysub(c1,c2)        # Resta entre polinomios
+# p.polymul(c1,c2)        # Resta entre polinomios
+
+# c1*2
+# c2*3
+
+# p.polyval(2, c1) # 4 + 4(2) + 4(2**2)
+# p.polyval(2, c2) # 4 + 4(2) + 4(2**2)
+    
+    
 
 
