@@ -1,15 +1,10 @@
 import numpy as np
 
 class Ficha():
-    """ Clase (Plantilla) que representa cualquier ficha de ajedrez """
-   
-    def __init__(self, nombre):
-        """ Constructor clase "Ficha" """
-        self.nombre = nombre
- 
+    """ Clase (Plantilla) que representa cualquier ficha de ajedrez """ 
     def __str__(self):
         """ Imprime nombre de un objeto "Ficha" """
-        return f"{self.nombre}"
+        return type(self).__name__
     
     def get_position(self):
         """ Método que pérmite obtener la posición de un "objeto" Ficha en un tablero de ajedrez"""
@@ -20,76 +15,63 @@ class Ficha():
         self.x = x
         self.y = y
 
-
 class Torre(Ficha):
     """ SubClase (Plantilla) que representa la ficha Torre. """
-
-    def __init__(self, nombre, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
+    def __init__(self, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
         """ Puede crear una ficha "Torre" de las formas:
 
-                ficha_torre = Torre("Torre")          # posicion aleatoria de la ficha en el tablero
-                ficha_torre = Torre("Torre", 2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """
-        super().__init__(nombre)
+                ficha_torre = Torre()        # posicion aleatoria de la ficha en el tablero
+                ficha_torre = Torre(2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """
         self.x = x
         self.y = y
         
 class Alfil(Ficha):
-    """ SubClase (Plantilla) que representa la ficha Alfil. """    
-
-    def __init__(self, nombre, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
+    """ SubClase (Plantilla) que representa la ficha Alfil. """
+    def __init__(self, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
         """ Puede crear una ficha "Alfil" de las formas:
 
-                ficha_alfil = Alfil("Alfil")          # posicion aleatoria de la ficha en el tablero
-                ficha_alfil = Alfil("Alfil", 2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """        
-        super().__init__(nombre)
+                ficha_alfil = Alfil()         # posicion aleatoria de la ficha en el tablero
+                ficha_alfil = Alfil(2, 4)     # posicion de la ficha en la celda (2,4) en el tablero """        
         self.x = x
         self.y = y
 
 class Reina(Ficha):
-    """ SubClase (Plantilla) que representa la ficha Reina. """    
-
-    def __init__(self, nombre, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
+    """ SubClase (Plantilla) que representa la ficha Reina. """   
+    def __init__(self, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
         """ Puede crear una ficha "Reina" de las formas:
 
-                ficha_reina = Reina("Reina")          # posicion aleatoria de la ficha en el tablero
-                ficha_reina = Reina("Reina", 2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """        
-        super().__init__(nombre)
+                ficha_reina = Reina()         # posicion aleatoria de la ficha en el tablero
+                ficha_reina = Reina(2, 4)     # posicion de la ficha en la celda (2,4) en el tablero """  
         self.x = x
         self.y = y
         
 class Rey(Ficha):
     """ SubClase (Plantilla) que representa la ficha Rey. """    
-
-    def __init__(self, nombre, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
+    def __init__(self, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
         """ Puede crear una ficha "Rey" de las formas:
 
-                ficha_rey = Rey("Rey")          # posicion aleatoria de la ficha en el tablero
-                ficha_rey = Rey("Rey", 2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """        
-        super().__init__(nombre)
+                ficha_rey = Rey()          # posicion aleatoria de la ficha en el tablero
+                ficha_rey = Rey( 2, 4)     # posicion de la ficha en la celda (2,4) en el tablero """        
         self.x = x
         self.y = y
         
 class Peon(Ficha):
-    """ SubClase (Plantilla) que representa la ficha Peon. """    
-
-    def __init__(self, nombre, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
+    """ SubClase (Plantilla) que representa la ficha Peon. """
+    def __init__(self, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
         """ Puede crear una ficha "Peon" de las formas:
 
-                ficha_peon = Peon("Peon")          # posicion aleatoria de la ficha en el tablero
-                ficha_peon = Peon("Peon", 2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """        
-        super().__init__(nombre)
+                ficha_peon = Peon()          # posicion aleatoria de la ficha en el tablero
+                ficha_peon = Peon( 2, 4)     # posicion de la ficha en la celda (2,4) en el tablero """    
         self.x = x
         self.y = y
         
 class Caballo(Ficha):
-    """ SubClase (Plantilla) que representa la ficha Caballo. """    
-
-    def __init__(self, nombre, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
+    """ SubClase (Plantilla) que representa la ficha Caballo. """
+    def __init__(self, x = np.random.randint(0,8) , y = np.random.randint(0,8)):
         """ Puede crear una ficha "Caballo" de las formas:
 
-                ficha_caballo = Caballo("Caballo")          # posicion aleatoria de la ficha en el tablero
-                ficha_caballo = Caballo("Caballo", 2, 4)    # posicion de la ficha en la celda (2,4) en el tablero """        
-        super().__init__(nombre)
+                ficha_caballo = Caballo()          # posicion aleatoria de la ficha en el tablero
+                ficha_caballo = Caballo( 2, 4)     # posicion de la ficha en la celda (2,4) en el tablero """  
         self.x = x
         self.y = y
 
@@ -179,6 +161,9 @@ class Tablero():
                 self.tab[ficha.x+2 if(ficha.x < 2) else (ficha.x-2) : ficha.x+3 : 4 , ficha.y+1 if(ficha.y < 1) else (ficha.y-1) : ficha.y+2 : 2] = 1
         
             self.tab[ficha.x, ficha.y] = 8
+            print(ficha)
+            print(self.tab,'\n')
+            
         except IndexError as indexerror:
             print("Error: (", indexerror, "), El tablero es [8x8], esta ingresando un indice incorrecto.")
         except ValueError:
